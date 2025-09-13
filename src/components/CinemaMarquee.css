@@ -1,0 +1,241 @@
+/* Cinema Marquee Styles */
+.cinema-marquee-container {
+  position: relative;
+  width: 100vw;
+  height: 120px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #16213e 30%,
+    #0f1419 70%,
+    #0a0a0a 100%
+  );
+  margin: 2rem 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transition: all 0.3s ease;
+}
+
+.cinema-marquee {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(
+    90deg,
+    #2d1b3d 0%,
+    #4a2c5a 20%,
+    #6b4c7d 50%,
+    #4a2c5a 80%,
+    #2d1b3d 100%
+  );
+  border: 0px solid #8b5cf6;
+  border-radius: 0px;
+  box-shadow: 
+    0 0 20px rgba(139, 92, 246, 0.3),
+    inset 0 0 10px rgba(139, 92, 246, 0.1);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transform-origin: center;
+}
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: marqueeScroll var(--scroll-speed, 30s) linear infinite;
+  gap: 4rem;
+  transform: translateX(0%);
+}
+
+.marquee-text {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(139, 92, 246, 0.5),
+    0 0 20px rgba(139, 92, 246, 0.3);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0 2rem;
+}
+
+/* Film strip styling */
+.film-strip {
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  background: #2a2a2a;
+  display: flex;
+  z-index: 2;
+  border: 1px solid #444;
+}
+
+.film-strip-top {
+  top: 10px;
+}
+
+.film-strip-bottom {
+  bottom: 10px;
+}
+
+.film-hole {
+  width: 12px;
+  height: 8px;
+  background: #000;
+  margin: 3.5px 2px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Marquee animation */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Glowing border effect */
+.cinema-marquee::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    #8b5cf6,
+    #a78bfa,
+    #8b5cf6,
+    #a78bfa
+  );
+  background-size: 400% 400%;
+  border-radius: 10px;
+  z-index: -1;
+  animation: glowingBorder 3s ease-in-out infinite;
+}
+
+@keyframes glowingBorder {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cinema-marquee-container {
+    height: 80px;
+    margin: 1rem 0;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  
+  .cinema-marquee {
+    height: 60px;
+  }
+  
+  .marquee-text {
+    font-size: 1.4rem;
+    margin: 0 1rem;
+  }
+  
+  .film-strip {
+    height: 10px;
+  }
+  
+  .film-hole {
+    width: 8px;
+    height: 6px;
+    margin: 2px 1.5px;
+  }
+  
+  .film-strip-top {
+    top: 5px;
+  }
+  
+  .film-strip-bottom {
+    bottom: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-text {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+  
+  .cinema-marquee-container {
+    height: 60px;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  
+  .cinema-marquee {
+    height: 45px;
+  }
+}
+
+/* Additional cinema-themed effects */
+.cinema-marquee-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    );
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Vintage film grain effect */
+.cinema-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px, 30px 30px, 25px 25px;
+  opacity: 0.3;
+  animation: filmGrain 0.5s steps(2) infinite;
+}
+
+@keyframes filmGrain {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(1px, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

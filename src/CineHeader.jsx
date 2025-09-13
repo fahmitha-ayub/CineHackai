@@ -1,8 +1,14 @@
 import React from "react";
 import LightRays from "./LightRays";
 import TextType from "./TextType";
+import CountdownTimer from "./components/CountdownTimer";
 
 const CineHackHeader = () => {
+  // Check if we should show Rush Hour content
+  const now = new Date();
+  const rushHourEnd = new Date('2025-09-14T09:30:00+05:30'); // Sept 14, 2025 9:30 AM IST
+  const showRushHour = now < rushHourEnd;
+
   const logos = [
     {
       href: "https://fisat.ac.in/",
@@ -149,8 +155,63 @@ const CineHackHeader = () => {
                   </div>
                 </div>
 
-                {/* Register button with glowing border */}
-                <a
+                {/* Register button with glowing border - Hide during Rush Hour */}
+                {!showRushHour && (
+                  <a
+                    href="https://makemypass.com/event/cinehack-ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-block"
+                  >
+                    <div className="relative p-0.5 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 animate-pulse hover:animate-none">
+                      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 blur-sm opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <button className="
+                        relative overflow-hidden rounded-lg
+                        bg-gradient-to-r from-[#0a1535] via-[#1e3a8a] to-[#0a1535]
+                        text-white px-6 py-2.5 text-sm font-medium
+                        shadow-lg
+                        hover:shadow-xl hover:shadow-red-500/20
+                        active:scale-95
+                        transition-all duration-300 ease-out
+                        transform hover:-translate-y-0.5
+                        group-hover:bg-gradient-to-r group-hover:from-red-600 group-hover:via-red-500 group-hover:to-red-600
+                        before:absolute before:inset-0
+                        before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent
+                        before:translate-x-[-100%] before:transition-transform before:duration-700
+                        hover:before:translate-x-[100%]
+                        backdrop-blur-sm
+                        whitespace-nowrap
+                        w-full h-full
+                      ">
+                        <span className="relative z-10 tracking-wider">
+                          REGISTER NOW
+                        </span>
+                      </button>
+                    </div>
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {/* Floating sidebar logos - Desktop only */}
+            <div className="hidden md:flex flex-col space-y-6 ml-0 md:ml-12">
+              {logos.map((logo, index) => (
+                <LogoItem key={index} logo={logo} index={index} />
+              ))}
+            </div>
+          </div>
+          
+          {/* Rush Hour Countdown - Only show if Rush Hour is active */}
+          {showRushHour && (
+            <div className="mt-8 max-w-4xl mx-auto">
+              <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-md rounded-2xl p-6 border border-gray-500/20">
+                <div className="text-center mb-4">
+                  <h3 className="text-2xl font-bold text-white mb-2">🚀 Rush Hour is Live!</h3>
+                  <p className="text-purple-300">24-hour pre-event • Get 25% discount on main event tickets</p>
+                </div>
+                <CountdownTimer />
+                <div className="text-center mt-4">
+                  <a
                   href="https://makemypass.com/event/cinehack-ai"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -177,23 +238,18 @@ const CineHackHeader = () => {
                       w-full h-full
                     ">
                       <span className="relative z-10 tracking-wider">
-                        REGISTER NOW
+                        REGISTER FOR RUSH HOUR
                       </span>
                     </button>
                   </div>
                 </a>
+                </div>
               </div>
             </div>
+          )}
 
-            {/* Floating sidebar logos - Desktop only */}
-            <div className="hidden md:flex flex-col space-y-6 ml-0 md:ml-12">
-              {logos.map((logo, index) => (
-                <LogoItem key={index} logo={logo} index={index} />
-              ))}
-            </div>
-
-            {/* Mobile scrolling logos */}
-            <div className="block md:hidden scroll-wrapper">
+          {/* Mobile scrolling logos */}
+          <div className="block md:hidden scroll-wrapper mt-8">
               <div className="scroll-container">
                 {/* Render logos multiple times for seamless loop */}
                 {[...Array(8)].map((_, setIndex) => 
@@ -224,7 +280,6 @@ const CineHackHeader = () => {
                 ).flat()}
               </div>
             </div>
-          </div>
         </div>
       </div>
     </>

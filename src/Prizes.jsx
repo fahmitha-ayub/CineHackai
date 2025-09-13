@@ -102,6 +102,69 @@ const PrizesAndOpportunities = () => {
       className="bg-black text-white py-16 px-8 min-h-14 flex flex-col justify-center"
     >
       <div className="max-w-6xl mx-auto">
+        {/* Prize Distribution Section */}
+        <div className="mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+            PRIZE POOL
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {/* First Place */}
+            <div className="group text-center">
+              <div className="relative p-1 rounded-2xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 transition-all duration-300">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-xl p-8 border border-yellow-500/50">
+                  <div className="mb-4">
+                    <Trophy size={48} weight="fill" className="text-yellow-400 mx-auto" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-yellow-400 mb-2">1st Place</h3>
+                  <div className="text-3xl font-black text-white mb-2">₹1,00,000</div>
+                  <p className="text-gray-300 text-sm">Winner Takes All</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Second Place */}
+            <div className="group text-center">
+              <div className="relative p-1 rounded-2xl bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:from-gray-200 hover:via-gray-300 hover:to-gray-400 transition-all duration-300">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-xl p-8 border border-gray-400/50">
+                  <div className="mb-4">
+                    <Trophy size={48} weight="fill" className="text-gray-400 mx-auto" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-400 mb-2">2nd Place</h3>
+                  <div className="text-3xl font-black text-white mb-2">₹75,000</div>
+                  <p className="text-gray-300 text-sm">Runner Up</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Third Place */}
+            <div className="group text-center">
+              <div className="relative p-1 rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 hover:from-amber-500 hover:via-amber-600 hover:to-amber-700 transition-all duration-300">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-xl p-8 border border-amber-600/50">
+                  <div className="mb-4">
+                    <Trophy size={48} weight="fill" className="text-amber-600 mx-auto" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-amber-600 mb-2">3rd Place</h3>
+                  <div className="text-3xl font-black text-white mb-2">₹50,000</div>
+                  <p className="text-gray-300 text-sm">Third Place</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Total Prize Pool Display */}
+          <div className="text-center mt-12">
+            {/* <div className="inline-block bg-gradient-to-r from-purple-900/30 to-blue-900/30 backdrop-blur-md rounded-2xl p-6 border border-purple-500/20">
+              <p className="text-lg text-gray-300 mb-2">Total Prize Pool</p>
+              <div className="text-4xl font-black text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text">
+                ₹2,25,000
+              </div>
+            </div> */}
+          </div>
+        </div>
+
         <h2 className="text-4xl md:text-5xl font-bold mb-16 text-left">
           WHY JOIN ?
         </h2>
