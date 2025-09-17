@@ -46,6 +46,12 @@ export default function Footer() {
               Timeline
             </a>
             <a 
+              href="#sponsors" 
+              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
+            >
+              Sponsors
+            </a>
+            <a 
               href="#contact" 
               className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
             >
