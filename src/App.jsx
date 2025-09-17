@@ -75,7 +75,7 @@ function App() {
               { label: "Pre-Event", href: "#pre-event" },
               { label: "Problem Statements", href: "#problems" },
               { label: "Timeline", href: "#timeline" },
-              { label: "Sponsors", href: "#sponsors" },
+              // { label: "Sponsors", href: "#sponsors" },
               { label:"Contact", href: "#contact" },
               
             ]}
@@ -95,8 +95,8 @@ function App() {
           <PrizesAndOpportunities />
           <ProblemStatements />
           <Timeline />
-          <Sponsors />
           <Contact />
+          <Sponsors />
           <Footer />
         </>
       } />
