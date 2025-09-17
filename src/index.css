@@ -46,6 +46,15 @@
   font-weight: normal;
   font-style: italic;
 }
+/* ✅ Custom font for Strategic Partner */
+@font-face {
+  font-family: "RusticRoadway";
+  src: url("/fonts/RusticRoadway.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* In your global CSS file */
 body, html {
   overflow-x: hidden;
