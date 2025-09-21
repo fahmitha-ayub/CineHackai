@@ -16,7 +16,7 @@ const Sponsors = () => {
       id: 2,
       name: "Eventopia",
       logo: "/Eventopia-Logo-13.png",
-      website: "#",
+      website: "https://eventopia.in/",
     },
   ];
 
