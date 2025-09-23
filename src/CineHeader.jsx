@@ -104,6 +104,16 @@ const CineHackHeader = () => {
       >
         <LightRays />
         <div className="container mx-auto px-6 py-20">
+          {/* Registration Extension Update - Top Priority */}
+          <div className="mb-8 p-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/50 rounded-lg backdrop-blur-sm max-w-7xl mx-auto">
+            <div className="flex items-center justify-center gap-3">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+              <span className="text-blue-300 font-semibold text-lg text-center">
+                📢 UPDATE: Registration extended to 25th September 2025
+              </span>
+            </div>
+          </div>
+
           {/* Main content */}
           <div className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-12">
             <div className="flex-1 md:pr-8">
