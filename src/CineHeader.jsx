@@ -109,7 +109,7 @@ const CineHackHeader = () => {
             <div className="flex items-center justify-center gap-3">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
               <span className="text-blue-300 font-semibold text-lg text-center">
-                📢 UPDATE: Registration extended to 25th September 2025
+                📢 UPDATE: Registration extended to 27th September 2025
               </span>
             </div>
           </div>

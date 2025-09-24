@@ -9,7 +9,7 @@ const timelineData = [
     stage: "#1",
     title: "Registrations Open",
     description: "The registration for the event is open for a month.",
-    date: "From August 22, 2025 till September 22, 2025",
+    date: "From August 22, 2025 till September 27, 2025",
     color: "#3b82f6",
     icon: "📝",
     status: "active" // Updated status to match the new timeline
@@ -19,10 +19,10 @@ const timelineData = [
     stage: "#2", 
     title: "Shortlisting and Second Round Registration",
     description: "The teams are shortlisted based on their ideas and the selected teams are contacted to rely further procedures.",
-    date: "September 22, 2025 - September 25, 2025",
+    date: "September 22, 2025 - September 27, 2025",
     color: "#8b5cf6",
     icon: "🚀",
-    status: "upcoming"
+    status: "active"
   },
   {
     id: 3,

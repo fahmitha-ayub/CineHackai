@@ -19,6 +19,14 @@ const Sponsors = () => {
       website: "https://eventopia.in/",
     },
   ];
+    const moneyPartners = [
+    {
+      id: 2,
+      name: "CMS",
+      logo: "/cms.jpeg",
+      website: "https://centralmarketingsyndicate.net/",
+    },
+  ];
 
   const renderSponsorLogo = (sponsor, index) => (
     <a
@@ -137,6 +145,19 @@ const Sponsors = () => {
               </div>
               <div className="flex items-center justify-center gap-6 flex-wrap">
                 {mediaPartners.map((sponsor, index) => renderSponsorLogo(sponsor, index))}
+              </div>
+            </div>
+            <div className="relative">
+              <div className="flex items-center justify-center mb-4">
+                <p
+                  className="text-yellow-400 text-sm font-bold tracking-wider uppercase"
+                  style={{ fontFamily: "RusticRoadway, sans-serif" }}
+                >
+                  
+                </p>
+              </div>
+              <div className="flex items-center justify-center gap-6 flex-wrap">
+                {moneyPartners.map((sponsor, index) => renderSponsorLogo(sponsor, index))}
               </div>
             </div>
           </div>
