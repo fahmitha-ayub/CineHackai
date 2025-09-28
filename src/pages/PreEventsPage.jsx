@@ -72,7 +72,7 @@ const PreEventsPage = () => {
       description:
         "Discover strategies to balance academic pursuits, career goals, and personal passions in this insightful session by Agnes Shibu, Software Developer at IBM.",
       isActive: true,
-      registrationUrl: "https://docs.google.com/forms/d/15R1JMzAMC49Q3s41AsotwCocYuNHxuC4fPl1_w8VMqU/edit",
+      registrationUrl: "https://docs.google.com/forms/d/15R1JMzAMC49Q3s41AsotwCocYuNHxuC4fPl1_w8VMqU/viewform",
       deadline: "30th September 2025, 7:00 PM - 8:00 PM",
       eligibility: "Open to all students",
       regFee: "Free",
