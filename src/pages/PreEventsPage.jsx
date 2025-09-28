@@ -48,8 +48,27 @@ const PreEventsPage = () => {
         "Top 3 winners get free pass to CineHack.AI offline pre-event at FISAT !!!",
       benefits: "All participants receive duty leave",
     },
+    
     {
       id: 3,
+      icon: <Users size={32} />,
+      color: "#ec4899",
+      title: "The Art of Balance: Managing Studies, Career and Passions",
+      description:
+        "Discover strategies to balance academic pursuits, career goals, and personal passions in this insightful session by Agnes Shibu, Software Developer at IBM.",
+      isActive: true,
+      // CORRECTED: Reverting to the provided link to make it available
+      registrationUrl: "https://forms.gle/4ErRoUCZpcyv5GkT8", 
+      deadline: "30th September 2025, 7:00 PM - 8:00 PM",
+      eligibility: "Open to all students",
+      regFee: "Free",
+      speaker: "Agnes Shibu",
+      speakerTitle: "Software Developer at IBM",
+      sessionType: "Online Session",
+      // isLinkBroken flag is removed
+    },
+    {
+      id: 4,
       icon: <Code size={32} />,
       color: "#8b5cf6",
       title: "Intro to Git and GitHub",
@@ -62,22 +81,6 @@ const PreEventsPage = () => {
       regFee: "Free",
       speaker: "Navneeth M Nambiar",
       speakerTitle: "System Engineer at Tata Consultancy Services",
-      sessionType: "Online Session",
-    },
-    {
-      id: 4,
-      icon: <Users size={32} />,
-      color: "#ec4899",
-      title: "The Art of Balance: Managing Studies, Career and Passions",
-      description:
-        "Discover strategies to balance academic pursuits, career goals, and personal passions in this insightful session by Agnes Shibu, Software Developer at IBM.",
-      isActive: true,
-      registrationUrl: "https://docs.google.com/forms/d/15R1JMzAMC49Q3s41AsotwCocYuNHxuC4fPl1_w8VMqU/viewform",
-      deadline: "30th September 2025, 7:00 PM - 8:00 PM",
-      eligibility: "Open to all students",
-      regFee: "Free",
-      speaker: "Agnes Shibu",
-      speakerTitle: "Software Developer at IBM",
       sessionType: "Online Session",
     },
     { id: 5, icon: <Users size={32} />, color: "#10b981" },
@@ -301,7 +304,7 @@ const PreEventsPage = () => {
 
   const EventCard = ({ event }) => {
     if (event.isActive) {
-      // E-Pookalam Contest Card
+      // E-Pookalam Contest Card (ID 1)
       if (event.id === 1) {
         return (
           <div className="relative group cursor-pointer">
@@ -376,7 +379,7 @@ const PreEventsPage = () => {
         );
       }
 
-      // Guess the Movie Card
+      // Guess the Movie Card (ID 2)
       if (event.id === 2) {
         return (
           <div className="relative group cursor-pointer">
@@ -477,99 +480,14 @@ const PreEventsPage = () => {
         );
       }
 
-      // Intro to Git and GitHub Card
+      // The Art of Balance Card (ID 3) - NOW ACTIVE
       if (event.id === 3) {
-        const currentDate = new Date();
-        const eventDate = new Date("2025-10-01T19:00:00");
-        const isRegistrationClosed = currentDate > eventDate;
-
-        return (
-          <div className="relative group cursor-pointer">
-            <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-6 border-2 border-orange-500 shadow-[0_0_0_2px_rgba(255,122,0,0.15)]  hover:scale-105 transition-all duration-300">
-              {/* Badge */}
-              <div className="px-4 py-2 bg-orange-700/80 border border-orange-500 text-white font-bold text-sm rounded mb-4">
-                PRE-EVENT #3 • {event.sessionType}
-              </div>
-
-              {/* Icon */}
-              <div className="w-12 h-12 bg-orange-500/20 border border-orange-500 rounded flex items-center justify-center mb-4 text-orange-400">
-                <div className="text-white">{event.icon}</div>
-              </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-bold text-white mb-2 border-b-2 border-orange-500 pb-1">
-                {event.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-white/90 text-sm mb-4 flex-grow">
-                {event.description}
-              </p>
-
-              {/* Session Info */}
-              <div className="bg-gray-800/50 border border-gray-600 rounded p-4 mb-4 text-sm">
-                <div className="text-gray-300 font-bold mb-2 flex items-center">
-                  <Code size={16} className="mr-2" />
-                  Session Details:
-                </div>
-                <ul className="text-gray-300 space-y-1 text-sm">
-                  <li>• Speaker: {event.speaker}</li>
-                  <li>• {event.speakerTitle}</li>
-                  <li>• {event.sessionType}</li>
-                </ul>
-              </div>
-
-              {/* Event Details */}
-              <div className="bg-gray-800/30 border border-gray-600 rounded p-3 mb-4">
-                <div className="text-gray-300 font-semibold text-sm">
-                  📅 Date & Time
-                </div>
-                <div className="text-white text-sm font-bold">
-                  {event.deadline}
-                </div>
-              </div>
-
-              {/* Registration Fee */}
-              <div className="bg-gray-800/30 border border-gray-600 rounded p-3 mb-4">
-                <div className="text-gray-300 font-semibold text-sm">
-                  💰 Registration Fee
-                </div>
-                <div className="text-white text-lg font-bold">
-                  {event.regFee}
-                </div>
-              </div>
-
-              {/* CTA Button */}
-              <a
-                // href={event.registrationUrl}
-                // target="_blank"
-                // rel="noopener noreferrer"
-                className={`inline-flex items-center justify-center px-6 py-3 font-bold rounded transition-colors duration-300 ${
-                  isRegistrationClosed
-                    ? "bg-gray-700 text-gray-300 cursor-not-allowed"
-                    : "bg-orange-700 text-white hover:bg-gray-600"
-                }`}
-              >
-                <span>
-                  {isRegistrationClosed
-                    ? "Registration Closed"
-                    : "Register Now"}
-                </span>
-                <ChevronRight size={16} className="ml-2" />
-              </a>
-
-              {/* Bottom accent */}
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-500/60 via-orange-400/60 to-transparent rounded-b"></div>
-            </div>
-          </div>
-        );
-      }
-
-      // The Art of Balance Card
-      if (event.id === 4) {
         const currentDate = new Date();
         const eventDate = new Date('2025-09-30T19:00:00');
         const isRegistrationClosed = currentDate > eventDate;
+        
+        // Removed the isBroken flag check entirely.
+        const isDisabled = isRegistrationClosed; 
 
         return (
           <div className="relative group cursor-pointer">
@@ -591,7 +509,7 @@ const PreEventsPage = () => {
 
               {/* Badge */}
               <div className="px-4 py-2 bg-orange-700/80 border border-orange-500 text-white font-bold text-sm rounded mb-4">
-                PRE-EVENT #4 • {event.sessionType}
+                PRE-EVENT #3 • {event.sessionType}
               </div>
 
               {/* Icon */}
@@ -647,13 +565,102 @@ const PreEventsPage = () => {
                 href={event.registrationUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                // Link is now clickable and active unless past deadline
                 className={`inline-flex items-center justify-center px-6 py-3 font-bold rounded transition-colors duration-300 ${
-                  isRegistrationClosed 
+                  isDisabled 
                     ? 'bg-gray-700 text-gray-300 cursor-not-allowed' 
                     : 'bg-orange-700 text-white hover:bg-gray-600'
                 }`}
               >
-                <span>{isRegistrationClosed ? 'Registration Closed' : 'Register Now'}</span>
+                <span>{isDisabled ? 'Registration Closed' : 'Register Now'}</span>
+                <ChevronRight size={16} className="ml-2" />
+              </a>
+
+              {/* Bottom accent */}
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-500/60 via-orange-400/60 to-transparent rounded-b"></div>
+            </div>
+          </div>
+        );
+      }
+      
+      // Intro to Git and GitHub Card (ID 4) - ACTIVE
+      if (event.id === 4) {
+        const currentDate = new Date();
+        const eventDate = new Date("2025-10-01T19:00:00");
+        const isRegistrationClosed = currentDate > eventDate;
+
+        return (
+          <div className="relative group cursor-pointer">
+            <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-6 border-2 border-orange-500 shadow-[0_0_0_2px_rgba(255,122,0,0.15)]  hover:scale-105 transition-all duration-300">
+              {/* Badge */}
+              <div className="px-4 py-2 bg-orange-700/80 border border-orange-500 text-white font-bold text-sm rounded mb-4">
+                PRE-EVENT #4 • {event.sessionType}
+              </div>
+
+              {/* Icon */}
+              <div className="w-12 h-12 bg-orange-500/20 border border-orange-500 rounded flex items-center justify-center mb-4 text-orange-400">
+                <div className="text-white">{event.icon}</div>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-xl font-bold text-white mb-2 border-b-2 border-orange-500 pb-1">
+                {event.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-white/90 text-sm mb-4 flex-grow">
+                {event.description}
+              </p>
+
+              {/* Session Info */}
+              <div className="bg-gray-800/50 border border-gray-600 rounded p-4 mb-4 text-sm">
+                <div className="text-gray-300 font-bold mb-2 flex items-center">
+                  <Code size={16} className="mr-2" />
+                  Session Details:
+                </div>
+                <ul className="text-gray-300 space-y-1 text-sm">
+                  <li>• Speaker: {event.speaker}</li>
+                  <li>• {event.speakerTitle}</li>
+                  <li>• {event.sessionType}</li>
+                </ul>
+              </div>
+
+              {/* Event Details */}
+              <div className="bg-gray-800/30 border border-gray-600 rounded p-3 mb-4">
+                <div className="text-gray-300 font-semibold text-sm">
+                  📅 Date & Time
+                </div>
+                <div className="text-white text-sm font-bold">
+                  {event.deadline}
+                </div>
+              </div>
+
+              {/* Registration Fee */}
+              <div className="bg-gray-800/30 border border-gray-600 rounded p-3 mb-4">
+                <div className="text-gray-300 font-semibold text-sm">
+                  💰 Registration Fee
+                </div>
+                <div className="text-white text-lg font-bold">
+                  {event.regFee}
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <a
+                href={event.registrationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center justify-center px-6 py-3 font-bold rounded transition-colors duration-300 ${
+                  isRegistrationClosed
+                    ? "bg-gray-700 text-gray-300 cursor-not-allowed"
+                    : "bg-orange-700 text-white hover:bg-gray-600"
+                }`}
+              >
+                <span>
+                  {isRegistrationClosed
+                    ? "Registration Closed"
+                    : "Register Now"}
+                </span>
                 <ChevronRight size={16} className="ml-2" />
               </a>
 
