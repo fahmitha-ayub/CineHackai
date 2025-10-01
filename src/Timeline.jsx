@@ -32,14 +32,14 @@ const timelineData = [
     date: "September 25, 2025 - October 1, 2025",
     color: "#06b6d4",
     icon: "📤",
-    status: "upcoming"
+    status: "Active"
   },
   {
     id: 4,
     stage: "#4",
     title: "Arrival of Participants in Campus",
     description: "Top teams selected for the next phase are to arrive on Campus.",
-    date: "October 3, 2025, 4:00 PM",
+    date: "October 4, 2025, 8:00 AM",
     color: "#10b981",
     icon: "🔍",
     status: "upcoming"
