@@ -493,7 +493,7 @@ const PreEventsPage = () => {
           <div className="relative group cursor-pointer">
             <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-lg p-6 border-2 border-orange-500 shadow-[0_0_0_2px_rgba(255,122,0,0.15)] hover:scale-105 transition-all duration-300">
               {/* Film strip decorative elements */}
-              <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0 opacity-10 pointer-events-none">
                 {/* Film strip perforations */}
                 <div className="absolute left-2 top-0 bottom-0 w-4 bg-gray-700 flex flex-col justify-evenly items-center">
                   {Array.from({ length: 6 }).map((_, i) => (
@@ -565,11 +565,11 @@ const PreEventsPage = () => {
                 href={event.registrationUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                // Link is now clickable and active unless past deadline
-                className={`inline-flex items-center justify-center px-6 py-3 font-bold rounded transition-colors duration-300 ${
-                  isDisabled 
-                    ? 'bg-gray-700 text-gray-300 cursor-not-allowed' 
-                    : 'bg-orange-700 text-white hover:bg-gray-600'
+                onClick={(e) => { if (isDisabled) e.preventDefault(); }}
+                className={`relative z-20 inline-flex items-center justify-center px-6 py-3 font-bold rounded transition-colors duration-300 ${
+                isDisabled 
+                ? 'bg-gray-700 text-gray-300 cursor-not-allowed pointer-events-none' 
+                : 'bg-orange-700 text-white hover:bg-gray-600'
                 }`}
               >
                 <span>{isDisabled ? 'Registration Closed' : 'Register Now'}</span>
